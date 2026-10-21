@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Rewrite collection URLs to be cleaner
+# /collections/hijabs -> /collections/display.php?collection=hijabs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ display.php?collection=$1 [L,QSA]
+
